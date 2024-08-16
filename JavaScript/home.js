@@ -55,8 +55,8 @@ data.map(el => {
       </div>
 
       <div class="footer__of__card" >
-      
-        <a id="${el.id}" onclick="addToList(${el.id})" class="add-to-card" >
+        
+        <a id="${el.id}" class="add-to-card" >
           <p>Add to card</p>
           <i class="fa-solid fa-cart-shopping"></i>
         </a>
@@ -78,8 +78,32 @@ data.map(el => {
 
 // counter in shoping icon 
 const shopCounter = document.querySelector('.shopping__icon span')
+const addToCard = document.querySelectorAll('.add-to-card');
+
 let conuter = 0
 let projecAdded = []
+
+function updateConuter() {
+  conuter++;
+  shopCounter.innerHTML = conuter
+
+}
+
+
+addToCard.forEach((el) => {
+  el.addEventListener('click', (e)=> {
+    if (e.target.tagName === 'I') {
+      projecAdded.push(e.target.parentElement.id)
+    } else {
+      projecAdded.push(e.target.id)
+    }
+    console.log(projecAdded)
+    // console.log(e.target)
+    updateConuter()
+
+  })
+})
+
 
 function addToList(d) {
   console.log(d)

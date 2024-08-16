@@ -236,10 +236,13 @@ header a.active {
 
 .add-to-card {
   position: relative;
+  display: block;
   transition: .4s;
   width: 8.6rem;
   height: 3rem;
   overflow: hidden;
+  z-index: 10000;
+
 }
 
 .add-to-card p {
