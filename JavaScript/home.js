@@ -80,35 +80,54 @@ data.map(el => {
 const shopCounter = document.querySelector('.shopping__icon span')
 const addToCard = document.querySelectorAll('.add-to-card');
 
-let conuter = 0
-let projecAdded = []
+let conuter = 0;
+
+let projecAdded = [];
+
+function checkIfWeHaveLocStor() {
+  const getData = localStorage.getItem('ecommersItems');
+  const makeItReadAble = JSON.parse(getData) 
+  if (makeItReadAble) {
+    return makeItReadAble
+  } else {
+    projecAdded
+  }
+
+}
 
 function updateConuter() {
-  conuter++;
+  // conuter++
+  const projecAdded = checkIfWeHaveLocStor()
+  const conuter = projecAdded.map(el => el.items).reduce((c, n) => c+n, 0)
   shopCounter.innerHTML = conuter
+}
 
+function checkIfWeHaveThisId(itemId) {
+  const projecAdded = checkIfWeHaveLocStor()
+  const itemsObject = projecAdded.find(el=> el.id === itemId)
+  
+  if(itemsObject === undefined) {
+    projecAdded.push({id: itemId, items: 1})
+  } else {
+    itemsObject.items++;
+  }
+  localStorage.setItem('ecommersItems', JSON.stringify(projecAdded))
+  checkIfWeHaveLocStor()
 }
 
 
 addToCard.forEach((el) => {
   el.addEventListener('click', (e)=> {
-    if (e.target.tagName === 'I') {
-      projecAdded.push(e.target.parentElement.id)
-    } else {
-      projecAdded.push(e.target.id)
-    }
-    console.log(projecAdded)
-    // console.log(e.target)
-    updateConuter()
 
+    if (e.target.tagName === 'I') {
+      const itemId = e.target.parentElement.id;
+      checkIfWeHaveThisId(itemId)
+
+    } else {
+      const itemId = e.target.id
+      checkIfWeHaveThisId(itemId)
+
+    }
+    updateConuter()
   })
 })
-
-
-function addToList(d) {
-  console.log(d)
-}
-
-// conuter++;
-//     shopCounter.innerHTML = conuter;
-
