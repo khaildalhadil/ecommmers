@@ -82,28 +82,17 @@ const addToCard = document.querySelectorAll('.add-to-card');
 
 let conuter = 0;
 
-let projecAdded = [];
-
-function checkIfWeHaveLocStor() {
-  const getData = localStorage.getItem('ecommersItems');
-  const makeItReadAble = JSON.parse(getData) 
-  if (makeItReadAble) {
-    return makeItReadAble
-  } else {
-    projecAdded
-  }
-
-}
+let projecAdded = JSON.parse(localStorage.getItem('ecommersItems')) || [];
 
 function updateConuter() {
   // conuter++
-  const projecAdded = checkIfWeHaveLocStor()
   const conuter = projecAdded.map(el => el.items).reduce((c, n) => c+n, 0)
   shopCounter.innerHTML = conuter
 }
 
+updateConuter()
+
 function checkIfWeHaveThisId(itemId) {
-  const projecAdded = checkIfWeHaveLocStor()
   const itemsObject = projecAdded.find(el=> el.id === itemId)
   
   if(itemsObject === undefined) {
@@ -112,13 +101,12 @@ function checkIfWeHaveThisId(itemId) {
     itemsObject.items++;
   }
   localStorage.setItem('ecommersItems', JSON.stringify(projecAdded))
-  checkIfWeHaveLocStor()
+  // checkIfWeHaveLocStor()
 }
 
 
 addToCard.forEach((el) => {
   el.addEventListener('click', (e)=> {
-
     if (e.target.tagName === 'I') {
       const itemId = e.target.parentElement.id;
       checkIfWeHaveThisId(itemId)
@@ -126,8 +114,9 @@ addToCard.forEach((el) => {
     } else {
       const itemId = e.target.id
       checkIfWeHaveThisId(itemId)
-
     }
+
+    console.log(projecAdded)
     updateConuter()
   })
 })
