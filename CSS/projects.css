@@ -1,0 +1,117 @@
+body {
+  color: #444;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+.header__of_cart {
+  border-bottom: 2px solid #00000013;
+  padding-bottom: 3.4rem;
+}
+
+.grid_items {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin: 2.4rem 0;
+}
+
+.row_cart {
+  display: flex;
+  border: #00000013 1px solid;
+  padding: 1.3rem;
+  border-radius: 1rem;
+}
+
+.row_cart img {
+  border-radius: .4rem;
+}
+
+.name_span {
+  margin-left: 2rem;
+  width: 15rem;
+}
+
+.name_span p {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.name_span span {
+  display: inline-block;
+  font-size: 1.4rem;
+  margin-top: 1rem;
+}
+
+.amount {
+  margin-left: 12rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  width: 8rem;
+}
+
+.amount p {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.amount .select {
+  display: inline-block;
+  padding: .4rem 0rem;
+  padding-left: 1rem;
+  border:#0000001c 1px solid;
+  outline: none;
+}
+
+.amount button {
+  padding: .6rem 0rem;
+  background: #3795BD;
+  border: none;
+  border-radius: .3rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.prise {
+  margin-left: 33rem;
+  font-size: 2rem;
+}
+
+.pay {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.top {
+  border: 1.5px solid #00000028;
+  border-radius: .4rem;
+  padding: 2rem ;
+}
+
+.top div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: #00000013 solid 1px;
+  padding-bottom: .5rem;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.top div:nth-child(4) {
+  font-weight: bold;
+  padding-top: 1.8rem;
+  
+}
+
+.pay button {
+  background: #3795BD;
+  padding: 1rem;
+  color: #fff;
+  font-weight: bold; 
+  border: none;
+  border-radius: .4rem;
+}

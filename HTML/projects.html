@@ -3,11 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/home.css">
+  <link rel="stylesheet" href="../CSS/projects.css">
+
+  <!-- icon cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- End of icon cdn -->
+
+  <!-- font google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Recursive:wght@300..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <!-- end of Font Gogole -->
+
   <title>Document</title>
 </head>
 <body>
-  <h1>poject PAGE</h1>
-  <!-- <script src="../JavaScript/home.js"></script> -->
+  <header>
+    <nav>
+      <div class="left__nav">
+        <ul>
+          <li><a href="">101</a></li>
+          <li><a href="#" class="">تواصل معنا</a></li>
+          <li><a href="#">البحث المتقدم</a></li>
+          <li><a href="#">أقسام المتجر</a></li>
+          <li><a href="#">الصفحة الرئيسية</a></li>
+        </ul>
+      </div>
+      <div class="right__nav">
+        <div class="content__input__icon" >
+          <input type="text">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <div class="header__icons">
+          <!-- <i class="fa-solid fa-user"></i>
+          <i class="fa-regular fa-bell"></i>
+          <i class="fa-solid fa-cart-shopping"></i> -->
+          <a  href="./projects.html" class="shopping__icon" >
+            👜
+            <span>0</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="width__1300" style="margin-top: 23rem;">
+    <div class="header__of_cart" >
+      <h1>Shopping Cart</h1>
+    </div>
+    <div class="grid_items">
+      <div class="carts">
+        <div class="row_cart">
+
+          <div class="content__img" >
+            <img src="../Images/pro2.jpg" style="height: 150px;">
+          </div>
+
+          <div class="name_span" >
+            <p>Blue techart</p>
+            <span>small</span>
+          </div>
+
+          <div class="amount" >
+            <p>Amount: </p>
+            <input type="number" name="" id="" class="select" >
+            <button>Remove</button>
+          </div>
+
+          <div class="prise">
+            <p><strong>200</strong></p>
+          </div>
+
+        </div>
+      </div>
+      <div class="pay">
+        <div class="top">
+          <div>
+            <p>subtotal</p>
+            <p>1000000</p>
+          </div>
+          <div>
+            <p>subtotal</p>
+            <p>1000000</p>
+          </div>
+          <div>
+            <p>subtotal</p>
+            <p>1000000</p>
+          </div>
+          <div>
+            <p>subtotal</p>
+            <p>1000000</p>
+          </div>
+        </div>
+        <button>Place Order</button>
+      </div>
+    </div>
+  </div>
+
   <script src="../JavaScript/projects.js"></script>
 </body>
 </html>

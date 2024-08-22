@@ -10,7 +10,6 @@ html {
 
 body {
   font-family: "Recursive", sans-serif;
-  background-color: #333;
 }
 
 .contn__all {
@@ -29,8 +28,10 @@ header {
   position: fixed;
   top: 0;
   width: 100vw;
+  height: 9rem;
   background: rgba(255, 255, 255, 0.842);
   z-index: 9999;
+  border-bottom: 2px solid #00000013;
 }
 
 header nav {
@@ -40,6 +41,7 @@ header nav {
   padding: 2rem 0rem;
   font-size: 1.6rem;
   max-width: 125rem;
+  margin: 0 auto;
 }
 
 header nav li {
@@ -101,16 +103,22 @@ header a.active {
 .shopping__icon {
   position: relative;
   cursor: pointer;
+  font-size: 1.2rem;
+  background-color: #fff;
+  border: 1px solid #44444471;
+  padding: 1rem;
+  border-radius: .8rem;
 }
 
 .shopping__icon span {
   position: absolute;
-  top: -1rem;
-  right: -1rem;
-  background: #0D9276;
+  top: -1.9rem;
+  right: -1.4rem;
+  background: #3795BD;
   color: #fff;
-  padding: .4rem .8rem;
+  padding: .6rem .7rem;
   border-radius: 50%;
+  font-size: 1.8rem;
 }
 
 /* main img */
