@@ -18,6 +18,26 @@ h1 {
   margin: 2.4rem 0;
 }
 
+.carts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.how_many_time {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.how_many_time button {
+  display: inline-block !important;
+  /* padding: .4rem .8rem !important; */
+  width: 2.8rem !important;
+
+}
+
 .row_cart {
   display: flex;
   border: #00000013 1px solid;
