@@ -14,21 +14,21 @@ const data = [
     id: 'project-2',
     img: '../Images/pro2.jpg',
     projctName: "Classic white",
-    prise: 14,
+    prise: 88,
     stars: 4
   },
   {
     id: 'project-3',
     img: '../Images/pro3.jpg',
     projctName: "glasses",
-    prise: 14,
+    prise: 18,
     stars: 4
   },
   {
     id: 'project-4',
     img: '../Images/pro4.jpg',
     projctName: "spider man",
-    prise: 14,
+    prise: 4,
     stars: 4
   },
 ]

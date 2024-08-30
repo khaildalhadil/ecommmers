@@ -22,6 +22,7 @@ body {
 
 }
 
+
 /* nav */
 
 header {
@@ -47,6 +48,10 @@ header nav {
 header nav li {
   list-style: none;
   /* padding: 2rem; */
+}
+
+.left__nav img {
+  height: 50px;
 }
 
 /* header nav li:nth-child(:last-child) {
@@ -241,6 +246,8 @@ header a.active {
   padding: .8rem 0;
   font-size: 1.4rem;
 }
+
+
 
 .add-to-card {
   position: relative;

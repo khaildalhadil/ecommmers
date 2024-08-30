@@ -1,7 +1,6 @@
 const shopCounter = document.querySelector('.shopping__icon span')
 const gridItems = document.querySelector('.carts')
-
-let projecAdded = JSON.parse(localStorage.getItem('ecommersItems'));
+const pay = document.querySelector('.pay')
 
 const data = [
     {
@@ -34,7 +33,8 @@ const data = [
     },
   ]
 
-console.log(projecAdded)
+let projecAdded = JSON.parse(localStorage.getItem('ecommersItems')) || []
+
 function updateConuter() {
     // conuter++
     const conuter = projecAdded.map(el => el.items).reduce((c, n) => c+n, 0)
@@ -43,9 +43,11 @@ function updateConuter() {
   
 updateConuter()
 
-projecAdded.map((el) => {
+const displayItems = () => {
+
+  projecAdded.map((el) => {
     let items = data.find((item) => item.id === el.id)
-    console.log(items)
+    
     let html = 
     `
     <div class="row_cart">
@@ -61,19 +63,99 @@ projecAdded.map((el) => {
 
       <div class="amount" >
         <p>Amount: </p>
-        <div class="how_many_time" >
-            <button onclick="" >+</button>
+        <div class="how_many_time" id="${items.id}" >
+            <a class="addItem" >+</a>
             <p>${el.items}</p>
-            <button onclick="" >-</button>
+            <a  class="subItem" >-</a>
         </div>
         <button>Remove</button>
       </div>
 
       <div class="prise">
-        <p><strong>${items.prise}</strong></p>
+        <p><strong>${items.prise * el.items} ﷼ </strong></p>
       </div>
 
     </div>
     `
+
     gridItems.insertAdjacentHTML('beforeend', html)
-})
+  })
+}
+
+displayItems()
+
+// addItem + 
+function increment() {
+
+  const addItem = document.querySelectorAll('.addItem');
+  
+  addItem.forEach(el => {
+    el.addEventListener('click', (e)=> {
+      const updateProjec = projecAdded.map(item => item.id === e.target.parentElement.id? {id: item.id, items: item.items += 1}: item)
+      localStorage.setItem('ecommersItems', JSON.stringify(updateProjec));
+    })
+  })
+  update()
+}
+
+increment()
+
+function decrement() {
+
+  const subItem = document.querySelectorAll('.subItem');
+  
+  subItem.forEach(el => {
+    el.addEventListener('click', (e)=> {
+      const updateProjec = projecAdded.map(item => item.id === e.target.parentElement.id? {id: item.id, items: item.items -= 1}: item)
+      localStorage.setItem('ecommersItems', JSON.stringify(updateProjec));
+    })
+  })
+  update()
+}
+
+decrement()
+
+function update() {
+  projecAdded = JSON.parse(localStorage.getItem('ecommersItems'));
+  console.log(projecAdded)
+  return projecAdded
+}
+
+
+
+// projecAdded = JSON.parse(localStorage.getItem('ecommersItems'))
+
+// function decrement(id) {
+//   console.log(id)
+//   // const item = projecAdded.find((item) => id === item.id)
+//   // console.log(item)
+// }
+
+function addPayElement() {
+  // const subtotal = 
+  const payElement =
+      `
+      <div class="top">
+        <div>
+          <p>sub total</p>
+          <p>${3}</p>
+        </div>
+        <div>
+          <p>shipping</p>
+          <p>5 ريال</p>
+        </div>
+        <div>
+          <p>Tax</p>
+          <p>${3}</p>
+        </div>
+        <div>
+          <p>Order Total</p>
+          <p>${3}</p>
+        </div>
+      </div>
+      <button>Place Order</button>
+      `
+    pay.insertAdjacentHTML('beforeend', payElement)
+}
+
+addPayElement()
