@@ -2,37 +2,6 @@ const header = document.querySelector('header');
 const navLink = document.querySelectorAll('header nav li a');
 const allProducts = document.querySelector('.all__products');
 
-const data = [
-  {
-    id: 'project-1',
-    img: '../Images/pro1.jpg',
-    projctName: "bottle",
-    prise: 14,
-    stars: 4
-  },
-  {
-    id: 'project-2',
-    img: '../Images/pro2.jpg',
-    projctName: "Classic white",
-    prise: 88,
-    stars: 4
-  },
-  {
-    id: 'project-3',
-    img: '../Images/pro3.jpg',
-    projctName: "glasses",
-    prise: 18,
-    stars: 4
-  },
-  {
-    id: 'project-4',
-    img: '../Images/pro4.jpg',
-    projctName: "spider man",
-    prise: 4,
-    stars: 4
-  },
-]
-
 // fixed nav
 window.addEventListener('scroll', (e) => {
   if (scrollY > 0) {
